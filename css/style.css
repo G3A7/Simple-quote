@@ -1,0 +1,15 @@
+.icons {
+  cursor: pointer !important;
+}
+body {
+  background: linear-gradient(90deg, #0acdf6, #38acc4);
+}
+.box {
+  max-width: 31.25rem;
+}
+#love{
+    color: rgb(193, 193, 178);
+}
+#love.red{
+    color: red;
+}

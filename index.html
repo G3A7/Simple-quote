@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container my-5 text-center overflow-hidden">
+      <div class="box rounded bg-white my-5 mx-auto p-2">
+        <h2 class="mb-4">Quote of the Day</h2>
+        <p id="quote"></p>
+        <h3 class="h4 mb-3 mt-4 text-end" data-id id="name"></h3>
+        <div
+          class="footer-action border-top py-1 d-flex align-items-center justify-content-between"
+        >
+          <div class="icons fs-4">
+            <i id="love" class="fa-solid fa-heart"></i>
+            <!-- <i id="love" class="fa-regular fa-heart"></i> -->
+            <i id="copy" class="fa-solid fa-copy"></i>
+            <i
+              onclick="listFn()"
+              data-bs-target="#list"
+              data-bs-toggle="offcanvas"
+              class="fa-solid fa-clipboard-list"
+            ></i>
+          </div>
+          <button onclick="generateQuote()" class="btn btn-outline-success">New Quote</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" id="list" data-bs-backdrop="false">
+      <div class="offcanvas-header border-bottom d-flex align-items-center justify-content-between">
+        <h3>My Favorite Quotes</h3>
+        <button data-bs-dismiss="offcanvas" class="btn btn-info rounded-pill text-white d-block">
+          close
+        </button>
+      </div>
+      <div id="offcanvas-body" class="offcanvas-body">
+        <div id="content" class="content"></div>
+        <button id="clear" class="btn d-block ms-auto btn-danger">clear</button>
+      </div>
+    </div>
+
+    <!-- <script src="js/all.min.js"></script> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
