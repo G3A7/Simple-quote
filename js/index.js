@@ -5,18 +5,12 @@ let love = document.getElementById("love");
 let content = document.getElementById("content");
 let clear = document.getElementById("clear");
 
-// let arr = [
-//   { a: "Ahmed", b: "Maram" },
-// //   { a: "mm", b: "bb" },
-// ];
-// let arr2 = [{ a: "Mahmoud", b: "Mousa" }];
-// const newa = [...arr, ...arr2];
-// console.log(newa);
-
-// let a = [{ a: "Ahmed", b: "Mousa", f: true }];
-// let b = [{ a: "Maram", b: "basyone" }];
-// let c = [...a, ...b];
-// console.log(c);
+(function () {
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
+})();
 
 let quotes = [
   {
@@ -119,7 +113,24 @@ love.addEventListener("click", (e) => {
 });
 
 copy.addEventListener("click", (e) => {
-  console.log(e.target);
+  const n = document.querySelector("#quote").textContent;
+  e.target.classList.add("text-info");
+  setTimeout((el) => {
+    e.target.classList.remove("text-info");
+  }, 1500);
+  console.log(n);
+  navigator.clipboard
+    .writeText(n)
+    .then(() => {
+      Toastify({
+        text: "Copy done",
+        duration: 1500,
+        stopOnFocus: false,
+      }).showToast();
+    })
+    .catch((err) => {
+      console.log("Error");
+    });
 });
 
 function listFn() {
@@ -143,3 +154,34 @@ function listFn() {
     content.innerHTML = box;
   }
 }
+
+clear.addEventListener("click", (e) => {
+  favArray.forEach((e) => {
+    if (e.fav == true) {
+      e.fav = false;
+    }
+  });
+  love.classList.remove("red");
+
+  favArray.splice(0);
+  localStorage.setItem("favArr", JSON.stringify(favArray));
+  listFn();
+});
+
+function shareWatsApp() {
+  let message = document.querySelector("#quote").textContent;
+
+  let whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, "_blank");
+}
+
+/*
+
+ navigator.clipboard.writeText(textToCopy).then(() => {
+    console.log("Text copied to clipboard successfully!");
+  }).catch(err => {
+    console.error("Failed to copy text: ", err);
+  });
+
+*/

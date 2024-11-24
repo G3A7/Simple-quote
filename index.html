@@ -4,14 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    /> -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -25,14 +19,43 @@
           class="footer-action border-top py-1 d-flex align-items-center justify-content-between"
         >
           <div class="icons fs-4">
-            <i id="love" class="fa-solid fa-heart"></i>
-            <!-- <i id="love" class="fa-regular fa-heart"></i> -->
-            <i id="copy" class="fa-solid fa-copy"></i>
             <i
-              onclick="listFn()"
-              data-bs-target="#list"
-              data-bs-toggle="offcanvas"
-              class="fa-solid fa-clipboard-list"
+              id="love"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="favorite Quote"
+              data-bs-custom-class="custom-tooltip"
+              class="fa-solid fa-heart"
+            ></i>
+            <!-- <i id="love" class="fa-regular fa-heart"></i> -->
+            <i
+              id="copy"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="copy Quote"
+              data-bs-custom-class="custom-tooltip"
+              class="fa-solid fa-copy"
+            ></i>
+            <span
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="List Quotes"
+              data-bs-custom-class="custom-tooltip"
+            >
+              <i
+                onclick="listFn()"
+                data-bs-target="#list"
+                data-bs-toggle="offcanvas"
+                class="fa-solid fa-clipboard-list"
+              ></i>
+            </span>
+            <i
+              onclick="shareWatsApp()"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="Share Quotes"
+              data-bs-custom-class="custom-tooltip"
+              class="fa-brands fa-whatsapp green"
             ></i>
           </div>
           <button onclick="generateQuote()" class="btn btn-outline-success">New Quote</button>
@@ -53,7 +76,12 @@
       </div>
     </div>
 
+    <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+      Tooltip on top
+    </button> -->
+
     <!-- <script src="js/all.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
   </body>

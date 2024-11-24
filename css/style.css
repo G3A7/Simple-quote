@@ -7,9 +7,16 @@ body {
 .box {
   max-width: 31.25rem;
 }
-#love{
-    color: rgb(193, 193, 178);
+#love {
+  color: rgb(193, 193, 178);
 }
-#love.red{
-    color: red;
+#love.red {
+  color: red;
+}
+.custom-tooltip {
+  --bs-tooltip-bg: #0acdf6;
+  --bs-tooltip-color: #fff;
+}
+.green {
+  color: green;
 }
