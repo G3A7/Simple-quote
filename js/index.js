@@ -102,8 +102,18 @@ love.addEventListener("click", (e) => {
     favArray = favArray.filter((e) => {
       return e.id != objFav.id;
     });
+    Toastify({
+      text: "remove from Favorite 💔",
+      duration: 2000,
+      stopOnFocus: false,
+    }).showToast();
   } else {
     favArray.push(objFav);
+    Toastify({
+      text: "add to Favorite 🤍",
+      duration: 2000,
+      stopOnFocus: false,
+    }).showToast();
     // localStorage.setItem("favArr", JSON.stringify(favArray));
     objFav.fav = true;
   }
