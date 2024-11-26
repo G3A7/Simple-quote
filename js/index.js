@@ -176,6 +176,22 @@ function shareWatsApp() {
   window.open(whatsappURL, "_blank");
 }
 
+function speakFn(ele) {
+  const text = document.getElementById("quote").textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  utterance.onstart = () => {
+    ele.classList.add("text-info");
+  };
+
+  utterance.onend = () => {
+    ele.classList.remove("text-info");
+  };
+
+  // Use SpeechSynthesis to speak the text
+  window.speechSynthesis.speak(utterance);
+}
+
 /*
 
  navigator.clipboard.writeText(textToCopy).then(() => {
