@@ -85,6 +85,109 @@
           <button onclick="generateQuote()" class="btn btn-outline-success">New Quote</button>
         </div>
       </div>
+
+      <button data-bs-toggle="modal" data-bs-target="#modal1" class="btn btn-outline-light">
+        Show all Quotes
+      </button>
+
+      <div class="modal modal-xl fade" id="modal1" data-bs-backdrop="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button data-bs-dismiss="modal" class="btn btn-danger rounded-pill ms-auto">
+                Close
+              </button>
+            </div>
+            <div class="modal-body text-white">
+               <div class="area_1">
+                <ul class="circles">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div> 
+
+              <div
+                id="carousel_1"
+                class="carousel slide custom-height"
+                data-bs-pause="false"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner" id="carousel-inner">
+                  <!-- <div class="carousel-item  active">
+                    <div class="content-carousel pt-5  bg-light w-50 mx-auto text-center py-5">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quas!</p>
+                      <h2>__Ahmed</h2>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="content-carousel text-center py-5">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quas!</p>
+                      <h2>__Ahmed</h2>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="content-carousel text-center py-5">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quas!</p>
+                      <h2>__Ahmed</h2>
+                    </div>
+                  </div> -->
+                </div>
+                <!-- <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carousel_1"
+                  data-bs-slide="prev"
+                >
+                  <span class="circle-carousel" aria-hidden="true"
+                    ><i class="fa-solid fa-rotate-180 fa-arrow-right"></i
+                  ></span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carousel_1"
+                  data-bs-slide="next"
+                >
+                  <span class="circle-carousel" aria-hidden="true"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </button> -->
+
+                <div id="carousel-indicators" class="carousel-indicators">
+                  <!-- <button
+                    type="button"
+                    data-bs-target="#carousel_1"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carousel_1"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carousel_1"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="offcanvas offcanvas-start" id="list" data-bs-backdrop="false">

@@ -4,6 +4,9 @@ let copy = document.getElementById("copy");
 let love = document.getElementById("love");
 let content = document.getElementById("content");
 let clear = document.getElementById("clear");
+let carouselInnerEl = document.getElementById("carousel-inner");
+let carouselIndicators = document.getElementById("carousel-indicators");
+// console.log(carouselInnerEl, carouselIndicators);
 
 (function () {
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
@@ -51,6 +54,53 @@ let quotes = [
     name: "― Bernard M. Baruch",
   },
 ];
+
+/*
+ <div class="carousel-item active">
+                    <div class="content-carousel text-center py-5">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quas!</p>
+                      <h2>__Ahmed</h2>
+                    </div>
+                  </div>
+
+
+
+                   <button
+                    type="button"
+                    data-bs-target="#carousel_1"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+*/
+
+// ${idx == 0 ? "active" : ""}
+(function () {
+  carouselInnerEl.innerHTML = "";
+  carouselIndicators.innerHTML = "";
+  quotes.forEach((e, idx) => {
+    carouselInnerEl.innerHTML += `<div data-bs-interval="1500" class="carousel-item   ${idx == 0 ? "active" : ""}">
+                    <div class="content-carousel pt-5  w-50 mx-auto text-center py-5">
+                      <p> 
+    <i class="fa-solid text-info fa-quote-left"></i>${
+      e.quote
+    } <i class="fa-solid text-info fa-quote-right"></i>
+</p>
+                      <h2>${e.name}</h2>
+                    </div>
+                  </div>`;
+    carouselIndicators.innerHTML += ` <button
+                    type="button"
+                    data-bs-target="#carousel_1"
+                    data-bs-slide-to="${idx}"
+                    class=${idx == 0 ? "active" : ""}
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>`;
+  });
+})();
+
 quote.innerHTML = `
 <i class="fa-solid text-info fa-quote-left"></i>
 ${quotes[0].quote} 
