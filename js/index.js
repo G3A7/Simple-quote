@@ -80,7 +80,9 @@ let quotes = [
   carouselInnerEl.innerHTML = "";
   carouselIndicators.innerHTML = "";
   quotes.forEach((e, idx) => {
-    carouselInnerEl.innerHTML += `<div data-bs-interval="1500" class="carousel-item   ${idx == 0 ? "active" : ""}">
+    carouselInnerEl.innerHTML += `<div data-bs-interval="1500" class="carousel-item   ${
+      idx == 0 ? "active" : ""
+    }">
                     <div class="content-carousel pt-5  w-50 mx-auto text-center py-5">
                       <p> 
     <i class="fa-solid text-info fa-quote-left"></i>${
@@ -170,6 +172,7 @@ love.addEventListener("click", (e) => {
   localStorage.setItem("favArr", JSON.stringify(favArray));
   e.target.classList.toggle("red");
   console.log(favArray);
+  listFn();
 });
 
 copy.addEventListener("click", (e) => {
